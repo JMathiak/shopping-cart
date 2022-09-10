@@ -7,7 +7,7 @@ import RouteSwitch from "./RouteSwitch";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouteSwitch />
+    <App />
   </React.StrictMode>
 );
 
@@ -15,3 +15,12 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+/*
+Header w/ links to Home, Products, Contact, and a cart icon to  link to their cart
+
+States: Product count, cart,
+Components: Card, 
+
+
+*/
