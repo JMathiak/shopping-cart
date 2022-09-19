@@ -1,0 +1,13 @@
+.header{
+    border-bottom: 1px solid black;
+    display: flex;
+}
+
+.link-holder{
+    display: flex;
+    margin-left: 20px;
+}
+
+.link{
+    margin-right: 10px;
+}
