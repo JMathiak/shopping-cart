@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import React, { useState } from "react";
 
 import Test from "./Test";
+import Home from "./components/Home";
 import Header from "./components/Header";
 import BrowseShop from "./components/BrowseShop";
 import ShoppingCart from "./components/ShoppingCart";
@@ -12,10 +13,10 @@ function App() {
   const [cart, setCart] = useState([]);
 
   return (
-    <div className="Container">
+    <div className="container">
       <Header cartSize={cart.length} />
       <Routes>
-        <Route path="/" element={<Test text={text} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/shop" element={<BrowseShop />} />
         <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
