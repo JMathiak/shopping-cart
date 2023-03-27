@@ -4,35 +4,36 @@ import "../styles/Header.css";
 function Header(props) {
   const navigate = useNavigate();
   return (
-    <div className="header">
-      <div className="link-holder">
-        <div
+    <nav className="header">
+      <ul className="link-holder">
+        <li
           className="link"
           onClick={() => {
             navigate("/");
           }}
         >
           Home
-        </div>
-        <div
+        </li>
+        <li
           className="link"
           onClick={() => {
             navigate("/shop");
           }}
         >
           Browse Shop
-        </div>
-        <div
+        </li>
+        <li
           className="link"
           onClick={() => {
             navigate("/cart");
           }}
         >
           View Cart
-        </div>
-      </div>
-      <div>{props.cartSize}</div>
-    </div>
+        </li>
+
+        <li>{props.cartSize}</li>
+      </ul>
+    </nav>
   );
 }
 

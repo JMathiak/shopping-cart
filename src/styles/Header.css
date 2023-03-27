@@ -1,13 +1,20 @@
 .header{
     border-bottom: 1px solid black;
     display: flex;
+    justify-content: flex-end;
 }
 
 .link-holder{
     display: flex;
-    margin-left: 20px;
+    margin-right: 50px;
+    list-style: none;
+    height: 100%;
 }
 
 .link{
     margin-right: 10px;
+    cursor: pointer;
+    padding-right: 4px;
+    padding-left: 4px;
+    height: 100%;
 }
