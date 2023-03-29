@@ -37,4 +37,11 @@ function Header(props) {
   );
 }
 
+
+/*
+Icons for home, browse, cart
+Badge on cart if item count > 0
+
+
+*/
 export default Header;

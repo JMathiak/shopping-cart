@@ -24,4 +24,12 @@ function App() {
   );
 }
 
+/*
+View cart opens side right side bar
+Drop down on browse for quick filtering of items
+Shop page has filter search bar? 
+Card component for each item --> Image, Name, Price, Add to Cart button, a view details button that routes to a new page (/products/{item name})
+
+*/
+
 export default App;
