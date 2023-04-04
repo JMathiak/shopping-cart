@@ -1,7 +1,20 @@
 import React, { Component } from "react";
-
-const ShoppingCart = () => {
-  return <div>ShopCart</div>;
+import CartItemCard from "./CartItemCard";
+import "../styles/CartGallery.css";
+const ShoppingCart = ({ cart }) => {
+  return (
+    <div className="cart-gallery">
+      {cart.map((item) => (
+        <CartItemCard
+          name={item.name}
+          img={item.image}
+          cost={item.cost}
+          type={item.type}
+          key={item.itemNumber}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default ShoppingCart;
