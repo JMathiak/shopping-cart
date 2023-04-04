@@ -17,31 +17,35 @@ import mageGhost from "../images/mageGhost.jpg";
 import reaverGhost from "../images/reaverGhost.jpg";
 import ruinGhost from "../images/ruinGhost.jpg";
 
-const BrowseShop = () => {
+const BrowseShop = ({ cart, setCart }) => {
   const vandalItemArray = [
     {
       name: "Oni Vandal",
       image: oniVandal,
       cost: "1775 VP",
       type: "Vandal",
+      itemNumber: 1,
     },
     {
       name: "RGX 11z Pro Vandal",
       image: rgxVandal,
       cost: "2175 VP",
       type: "Vandal",
+      itemNumber: 2,
     },
     {
       name: "Gaia's Vengeance Vandal",
       image: gaiasVandal,
       cost: "1775 VP",
       type: "Vandal",
+      itemNumber: 3,
     },
     {
       name: "Araxys Vandal",
       image: araxysVandal,
       cost: "2175 VP",
       type: "Vandal",
+      itemNumber: 4,
     },
   ];
 
@@ -51,24 +55,28 @@ const BrowseShop = () => {
       image: oniPhantom,
       cost: "1775 VP",
       type: "Phantom",
+      itemNumber: 5,
     },
     {
       name: "Chronovoid Phantom",
       image: chronoPhantom,
       cost: "2175 VP",
       type: "Phantom",
+      itemNumber: 6,
     },
     {
       name: "Recon Phantom",
       image: reconPhantom,
       cost: "1775 VP",
       type: "Phantom",
+      itemNumber: 7,
     },
     {
       name: "Spectrum Phantom",
       image: spectrumPhantom,
       cost: "2675 VP",
       type: "Phantom",
+      itemNumber: 8,
     },
   ];
 
@@ -78,24 +86,28 @@ const BrowseShop = () => {
       image: gaiasGhost,
       cost: "1775 VP",
       type: "Ghost",
+      itemNumber: 9,
     },
     {
       name: "Mage Punk Ghost",
       image: mageGhost,
       cost: "1775 VP",
       type: "Ghost",
+      itemNumber: 10,
     },
     {
       name: "Reaver Ghost",
       image: reaverGhost,
       cost: "1775 VP",
       type: "Ghost",
+      itemNumber: 11,
     },
     {
       name: "Ruiniation Ghost",
       image: ruinGhost,
       cost: "2175 VP",
       type: "Ghost",
+      itemNumber: 12,
     },
   ];
 
@@ -105,24 +117,28 @@ const BrowseShop = () => {
       image: chronoSheriff,
       cost: "2175 VP",
       type: "Sheriff",
+      itemNumber: 13,
     },
     {
       name: "Reaver Sheriff",
       image: reaverSheriff,
       cost: "1775 VP",
       type: "Sheriff",
+      itemNumber: 14,
     },
     {
       name: "Singularity Sheriff",
       image: singularitySheriff,
       cost: "2175 VP",
       type: "Sheriff",
+      itemNumber: 15,
     },
     {
       name: "Sentinels of Light Sheriff",
       image: solSheriff,
       cost: "2175 VP",
       type: "Sheriff",
+      itemNumber: 16,
     },
   ];
   return (
@@ -132,6 +148,8 @@ const BrowseShop = () => {
         phantoms={phantomItemArray}
         ghosts={ghostItemArray}
         sheriffs={sheriffItemArray}
+        cart={cart}
+        setCart={setCart}
       />
     </div>
   );

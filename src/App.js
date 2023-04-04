@@ -17,8 +17,11 @@ function App() {
       <Header cartSize={cart.length} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<BrowseShop />} />
-        <Route path="/cart" element={<ShoppingCart />} />
+        <Route
+          path="/shop"
+          element={<BrowseShop cart={cart} setCart={setCart} />}
+        />
+        <Route path="/cart" element={<ShoppingCart cart={cart} />} />
       </Routes>
     </div>
   );
