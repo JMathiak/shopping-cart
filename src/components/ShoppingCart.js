@@ -10,6 +10,7 @@ const ShoppingCart = ({ cart }) => {
           img={item.image}
           cost={item.cost}
           type={item.type}
+          quantity={item.quantity}
           key={item.itemNumber}
         />
       ))}
