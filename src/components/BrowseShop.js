@@ -292,15 +292,11 @@ const BrowseShop = ({ cart, setCart }) => {
   const sortItems = (e) => {
     let sort = e.target.value;
     let filteredArr = [];
-
-    // if (sortOption === "priceLowToHigh") {
-    //   let filteredArr = [...displayArr].sort((a, b) =>
-    //     a.cost > b.cost ? 1 : -1
-    //   );
-    // }
-
     switch (sort) {
       default:
+        break;
+      case "default":
+        setDisplayArr(allItemArray);
         break;
       case "lowToHigh":
         filteredArr = [...displayArr].sort((a, b) =>
@@ -311,6 +307,12 @@ const BrowseShop = ({ cart, setCart }) => {
       case "highToLow":
         filteredArr = [...displayArr].sort((a, b) =>
           a.cost < b.cost ? 1 : -1
+        );
+        setDisplayArr(filteredArr);
+        break;
+      case "skinLine":
+        filteredArr = [...displayArr].sort((a, b) =>
+          a.name > b.name ? 1 : -1
         );
         setDisplayArr(filteredArr);
         break;
@@ -347,12 +349,12 @@ const BrowseShop = ({ cart, setCart }) => {
       <div>
         <label for="sort">Sort Items: </label>
         <select onChange={sortItems} name="sort" id="sort">
-          <option value="Default" selected>
-            Default
+          <option value="default" selected>
+            By Gun Type
           </option>
           <option value="lowToHigh">Price: Low to High</option>
           <option value="highToLow">Price: High to Low</option>
-          <option value="alphabetically">Alphabetically</option>
+          <option value="skinLine">By Skin Line</option>
         </select>
       </div>
       <ItemGallery
