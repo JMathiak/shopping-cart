@@ -299,15 +299,23 @@ const BrowseShop = ({ cart, setCart }) => {
         setDisplayArr(allItemArray);
         break;
       case "lowToHigh":
-        filteredArr = [...displayArr].sort((a, b) =>
-          a.cost > b.cost ? 1 : -1
-        );
+        filteredArr = [...displayArr].sort((a, b) => {
+          if (a.cost === b.cost) {
+            return a.name > b.name ? 1 : -1;
+          } else {
+            return a.cost > b.cost ? 1 : -1;
+          }
+        });
         setDisplayArr(filteredArr);
         break;
       case "highToLow":
-        filteredArr = [...displayArr].sort((a, b) =>
-          a.cost < b.cost ? 1 : -1
-        );
+        filteredArr = [...displayArr].sort((a, b) => {
+          if (a.cost === b.cost) {
+            return a.name > b.name ? 1 : -1;
+          } else {
+            return a.cost < b.cost ? 1 : -1;
+          }
+        });
         setDisplayArr(filteredArr);
         break;
       case "skinLine":
