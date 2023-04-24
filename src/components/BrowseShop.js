@@ -370,7 +370,8 @@ const BrowseShop = ({ cart, setCart }) => {
         phantoms={phantomItemArray}
         ghosts={ghostItemArray}
         sheriffs={sheriffItemArray}
-        allItems={displayArr}
+        allItems={allItemArray}
+        displayArr={displayArr}
         cart={cart}
         setCart={setCart}
       />

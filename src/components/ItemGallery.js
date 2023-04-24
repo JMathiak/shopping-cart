@@ -9,10 +9,11 @@ const ItemGallery = ({
   cart,
   setCart,
   allItems,
+  displayArr,
 }) => {
   return (
     <div className="item-gallery">
-      {allItems.map((item) => (
+      {displayArr.map((item) => (
         <ItemCard
           name={item.name}
           image={item.image}
@@ -22,6 +23,7 @@ const ItemGallery = ({
           products={vandals}
           cart={cart}
           setCart={setCart}
+          allItems={allItems}
           key={item.itemNumber}
         />
       ))}

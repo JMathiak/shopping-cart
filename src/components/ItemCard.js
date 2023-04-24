@@ -10,6 +10,7 @@ const ItemCard = ({
   itemNumber,
   cart,
   setCart,
+  allItems,
 }) => {
   const [quant, setQuant] = useState(1);
 
@@ -21,7 +22,7 @@ const ItemCard = ({
       workingArr[index].quantity = itemQuant;
       setCart(workingArr);
     } else {
-      let item = products.find((x) => x.itemNumber === itemNumber);
+      let item = allItems.find((x) => x.itemNumber === itemNumber);
       let arrItem = {
         name: item.name,
         image: item.image,
