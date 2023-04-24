@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ItemGallery from "./ItemGallery";
 import oniVandal from "../images/OniVandal.jpg";
 import rgxVandal from "../images/RGXVandal.jpg";
@@ -18,7 +18,8 @@ import reaverGhost from "../images/reaverGhost.jpg";
 import ruinGhost from "../images/ruinGhost.jpg";
 
 const BrowseShop = ({ cart, setCart }) => {
-  const [filter, setFilter] = useState("vandals");
+  //const [filter, setFilter] = useState("");
+  //const [sortOption, setSortOption] = useState("");
 
   const vandalItemArray = [
     {
@@ -259,17 +260,101 @@ const BrowseShop = ({ cart, setCart }) => {
     },
   ];
   const [displayArr, setDisplayArr] = useState([...allItemArray]);
-  const filterItems = () => {
-    if (filter === "vandals") {
-      let filteredArr = allItemArray.filter((x) => x.type === "Vandal");
-      console.log(filteredArr);
-      setDisplayArr(filteredArr);
+  const filterItems = (e) => {
+    let filter = e.target.value;
+    let filteredArr = [];
+    switch (filter) {
+      default:
+        setDisplayArr(allItemArray);
+        break;
+      case "all":
+        setDisplayArr(allItemArray);
+        break;
+      case "vandals":
+        filteredArr = [...allItemArray].filter((x) => x.type === "Vandal");
+        setDisplayArr(filteredArr);
+        break;
+      case "phantoms":
+        filteredArr = [...allItemArray].filter((x) => x.type === "Phantom");
+        setDisplayArr(filteredArr);
+        break;
+      case "sheriffs":
+        filteredArr = [...allItemArray].filter((x) => x.type === "Sheriff");
+        setDisplayArr(filteredArr);
+        break;
+      case "ghosts":
+        filteredArr = [...allItemArray].filter((x) => x.type === "Ghost");
+        setDisplayArr(filteredArr);
+        break;
     }
   };
 
+  const sortItems = (e) => {
+    let sort = e.target.value;
+    let filteredArr = [];
+
+    // if (sortOption === "priceLowToHigh") {
+    //   let filteredArr = [...displayArr].sort((a, b) =>
+    //     a.cost > b.cost ? 1 : -1
+    //   );
+    // }
+
+    switch (sort) {
+      default:
+        break;
+      case "lowToHigh":
+        filteredArr = [...displayArr].sort((a, b) =>
+          a.cost > b.cost ? 1 : -1
+        );
+        setDisplayArr(filteredArr);
+        break;
+      case "highToLow":
+        filteredArr = [...displayArr].sort((a, b) =>
+          a.cost < b.cost ? 1 : -1
+        );
+        setDisplayArr(filteredArr);
+        break;
+    }
+  };
+
+  // useEffect(() => {
+  //   if (filter === "vandals") {
+  //     let filteredArr = [...displayArr].filter((x) => x.type === "Vandal");
+  //     console.log(filteredArr);
+  //     setDisplayArr(filteredArr);
+  //   }
+  // }, [displayArr, filter]);
+
+  // useEffect(() => {
+  //   if (sortOption === "priceLowToHigh") {
+  //     setDisplayArr([...displayArr])
+  //   }
+  // }, [sortOption]);
   return (
     <div className="shop-area">
-      <button onClick={filterItems}>Filter</button>
+      <div>
+        <label for="filter">Filter Items: </label>
+        <select onChange={filterItems} name="filter" id="filter">
+          <option value="all" selected>
+            Show All
+          </option>
+          <option value="vandals">Vandals</option>
+          <option value="phantoms">Phantoms</option>
+          <option value="sheriffs">Sheriffs</option>
+          <option value="ghosts">Ghosts</option>
+        </select>
+      </div>
+      <div>
+        <label for="sort">Sort Items: </label>
+        <select onChange={sortItems} name="sort" id="sort">
+          <option value="Default" selected>
+            Default
+          </option>
+          <option value="lowToHigh">Price: Low to High</option>
+          <option value="highToLow">Price: High to Low</option>
+          <option value="alphabetically">Alphabetically</option>
+        </select>
+      </div>
       <ItemGallery
         vandals={vandalItemArray}
         phantoms={phantomItemArray}
