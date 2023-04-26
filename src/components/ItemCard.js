@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/ItemCard.css";
+import { useNavigate, Link } from "react-router-dom";
 
 const ItemCard = ({
   name,
@@ -13,7 +14,7 @@ const ItemCard = ({
   allItems,
 }) => {
   const [quant, setQuant] = useState(1);
-
+  const navigate = useNavigate();
   const addToCart = () => {
     if (cart.filter((x) => x.itemNumber === itemNumber).length > 0) {
       let workingArr = [...cart];
@@ -56,7 +57,12 @@ const ItemCard = ({
       ></input>
       <div>
         <button onClick={addToCart}> Add to Cart</button>
-        <button> View Details </button>
+        <Link
+          to={`/product/${itemNumber}`}
+          state={{ name: name, price: price, type: type }}
+        >
+          View Details
+        </Link>
       </div>
     </div>
   );
