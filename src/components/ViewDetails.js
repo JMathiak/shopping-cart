@@ -5,9 +5,11 @@ const ViewDetails = () => {
   const { name } = location.state;
   const { price } = location.state;
   const { type } = location.state;
+  const { image } = location.state;
   return (
     <div>
       {name}, {price} VP, {type}
+      <img src={image} alt="Gun"></img>
     </div>
   );
 };

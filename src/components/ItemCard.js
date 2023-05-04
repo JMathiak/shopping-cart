@@ -15,6 +15,8 @@ const ItemCard = ({
 }) => {
   const [quant, setQuant] = useState(1);
   const navigate = useNavigate();
+  let quantMIN = 1;
+  let quantMAX = 5;
   const addToCart = () => {
     if (cart.filter((x) => x.itemNumber === itemNumber).length > 0) {
       let workingArr = [...cart];
@@ -48,18 +50,19 @@ const ItemCard = ({
         type="number"
         name="quantity"
         id="quantity"
-        min="1"
-        max="5"
+        min={quantMIN}
+        max={quantMAX}
         value={quant}
         onChange={(e) => {
           setQuant(e.target.value);
         }}
       ></input>
-      <div>
+      <div className="item-card-buttons">
         <button onClick={addToCart}> Add to Cart</button>
         <Link
+          className="item-card-link"
           to={`/product/${itemNumber}`}
-          state={{ name: name, price: price, type: type }}
+          state={{ name: name, price: price, type: type, image: image }}
         >
           View Details
         </Link>
