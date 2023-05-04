@@ -296,7 +296,14 @@ const BrowseShop = ({ cart, setCart }) => {
       default:
         break;
       case "default":
-        setDisplayArr(allItemArray);
+        filteredArr = [...displayArr].sort((a, b) => {
+          if (a.type === b.type) {
+            return a.cost > b.cost ? 1 : -1;
+          } else {
+            return a.type > b.type ? 1 : -1;
+          }
+        });
+        setDisplayArr(filteredArr);
         break;
       case "lowToHigh":
         filteredArr = [...displayArr].sort((a, b) => {
