@@ -14,3 +14,21 @@
     width: 50%;
 
 }
+
+.item-card-buttons{
+    margin-top: 5px;
+}
+
+.item-card-link{
+    margin-left: 4px;
+    font: 13.3333px Arial;
+    text-decoration: none;
+    background-color: #F0F0F0;
+    color: #333333;
+    padding: 1px 6px 1px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    border-width: 2px;
+}
