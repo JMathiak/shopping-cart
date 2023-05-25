@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "../styles/Header.css";
 function Header(props) {
   const navigate = useNavigate();
@@ -39,7 +41,7 @@ function Header(props) {
               navigate("/cart");
             }}
           >
-            View Cart
+            <FontAwesomeIcon icon={faCartShopping} />
           </Link>
         </li>
 
