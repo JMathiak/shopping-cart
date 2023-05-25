@@ -351,10 +351,13 @@ const BrowseShop = ({ cart, setCart }) => {
     <div className="shop-area">
       <div>
         <label for="filter">Filter Items: </label>
-        <select onChange={filterItems} name="filter" id="filter">
-          <option value="all" selected>
-            Show All
-          </option>
+        <select
+          defaultValue={"all"}
+          onChange={filterItems}
+          name="filter"
+          id="filter"
+        >
+          <option value="all">Show All</option>
           <option value="vandals">Vandals</option>
           <option value="phantoms">Phantoms</option>
           <option value="sheriffs">Sheriffs</option>
@@ -363,10 +366,13 @@ const BrowseShop = ({ cart, setCart }) => {
       </div>
       <div>
         <label for="sort">Sort Items: </label>
-        <select onChange={sortItems} name="sort" id="sort">
-          <option value="default" selected>
-            By Gun Type
-          </option>
+        <select
+          defaultValue={"default"}
+          onChange={sortItems}
+          name="sort"
+          id="sort"
+        >
+          <option value="default">By Gun Type</option>
           <option value="lowToHigh">Price: Low to High</option>
           <option value="highToLow">Price: High to Low</option>
           <option value="skinLine">By Skin Line</option>
