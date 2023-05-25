@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import "../styles/BrowseShop.css";
 import ItemGallery from "./ItemGallery";
 import oniVandal from "../images/OniVandal.jpg";
 import rgxVandal from "../images/RGXVandal.jpg";
@@ -18,133 +19,6 @@ import reaverGhost from "../images/reaverGhost.jpg";
 import ruinGhost from "../images/ruinGhost.jpg";
 
 const BrowseShop = ({ cart, setCart }) => {
-  //const [filter, setFilter] = useState("");
-  //const [sortOption, setSortOption] = useState("");
-
-  const vandalItemArray = [
-    {
-      name: "Oni Vandal",
-      image: oniVandal,
-      cost: 1775,
-      type: "Vandal",
-      itemNumber: 1,
-    },
-    {
-      name: "RGX 11z Pro Vandal",
-      image: rgxVandal,
-      cost: 2175,
-      type: "Vandal",
-      itemNumber: 2,
-    },
-    {
-      name: "Gaia's Vengeance Vandal",
-      image: gaiasVandal,
-      cost: 1775,
-      type: "Vandal",
-      itemNumber: 3,
-    },
-    {
-      name: "Araxys Vandal",
-      image: araxysVandal,
-      cost: 2175,
-      type: "Vandal",
-      itemNumber: 4,
-    },
-  ];
-
-  const phantomItemArray = [
-    {
-      name: "Oni Phantom",
-      image: oniPhantom,
-      cost: 1775,
-      type: "Phantom",
-      itemNumber: 5,
-    },
-    {
-      name: "Chronovoid Phantom",
-      image: chronoPhantom,
-      cost: 2175,
-      type: "Phantom",
-      itemNumber: 6,
-    },
-    {
-      name: "Recon Phantom",
-      image: reconPhantom,
-      cost: 1775,
-      type: "Phantom",
-      itemNumber: 7,
-    },
-    {
-      name: "Spectrum Phantom",
-      image: spectrumPhantom,
-      cost: 2675,
-      type: "Phantom",
-      itemNumber: 8,
-    },
-  ];
-
-  const ghostItemArray = [
-    {
-      name: "Gaia's Vengeance Ghost",
-      image: gaiasGhost,
-      cost: 1775,
-      type: "Ghost",
-      itemNumber: 9,
-    },
-    {
-      name: "Mage Punk Ghost",
-      image: mageGhost,
-      cost: 1775,
-      type: "Ghost",
-      itemNumber: 10,
-    },
-    {
-      name: "Reaver Ghost",
-      image: reaverGhost,
-      cost: 1775,
-      type: "Ghost",
-      itemNumber: 11,
-    },
-    {
-      name: "Ruiniation Ghost",
-      image: ruinGhost,
-      cost: 2175,
-      type: "Ghost",
-      itemNumber: 12,
-    },
-  ];
-
-  const sheriffItemArray = [
-    {
-      name: "Chronovoid Sheriff",
-      image: chronoSheriff,
-      cost: 2175,
-      type: "Sheriff",
-      itemNumber: 13,
-    },
-    {
-      name: "Reaver Sheriff",
-      image: reaverSheriff,
-      cost: 1775,
-      type: "Sheriff",
-      itemNumber: 14,
-    },
-    {
-      name: "Singularity Sheriff",
-      image: singularitySheriff,
-      cost: 2175,
-      type: "Sheriff",
-      itemNumber: 15,
-    },
-    {
-      name: "Sentinels of Light Sheriff",
-      image: solSheriff,
-      cost: 2175,
-      type: "Sheriff",
-      itemNumber: 16,
-    },
-  ];
-
   const allItemArray = [
     {
       name: "Oni Vandal",
@@ -260,10 +134,9 @@ const BrowseShop = ({ cart, setCart }) => {
     },
   ];
   const [displayArr, setDisplayArr] = useState([...allItemArray]);
-  const filterItems = (e) => {
-    let filter = e.target.value;
+  const filterItems = (sort) => {
     let filteredArr = [];
-    switch (filter) {
+    switch (sort) {
       default:
         setDisplayArr(allItemArray);
         break;
@@ -289,50 +162,50 @@ const BrowseShop = ({ cart, setCart }) => {
     }
   };
 
-  const sortItems = (e) => {
-    let sort = e.target.value;
-    let filteredArr = [];
-    switch (sort) {
-      default:
-        break;
-      case "default":
-        filteredArr = [...displayArr].sort((a, b) => {
-          if (a.type === b.type) {
-            return a.cost > b.cost ? 1 : -1;
-          } else {
-            return a.type > b.type ? 1 : -1;
-          }
-        });
-        setDisplayArr(filteredArr);
-        break;
-      case "lowToHigh":
-        filteredArr = [...displayArr].sort((a, b) => {
-          if (a.cost === b.cost) {
-            return a.name > b.name ? 1 : -1;
-          } else {
-            return a.cost > b.cost ? 1 : -1;
-          }
-        });
-        setDisplayArr(filteredArr);
-        break;
-      case "highToLow":
-        filteredArr = [...displayArr].sort((a, b) => {
-          if (a.cost === b.cost) {
-            return a.name > b.name ? 1 : -1;
-          } else {
-            return a.cost < b.cost ? 1 : -1;
-          }
-        });
-        setDisplayArr(filteredArr);
-        break;
-      case "skinLine":
-        filteredArr = [...displayArr].sort((a, b) =>
-          a.name > b.name ? 1 : -1
-        );
-        setDisplayArr(filteredArr);
-        break;
-    }
-  };
+  // const sortItems = (e) => {
+  //   let sort = e.target.value;
+  //   let filteredArr = [];
+  //   switch (sort) {
+  //     default:
+  //       break;
+  //     case "default":
+  //       filteredArr = [...displayArr].sort((a, b) => {
+  //         if (a.type === b.type) {
+  //           return a.cost > b.cost ? 1 : -1;
+  //         } else {
+  //           return a.type > b.type ? 1 : -1;
+  //         }
+  //       });
+  //       setDisplayArr(filteredArr);
+  //       break;
+  //     case "lowToHigh":
+  //       filteredArr = [...displayArr].sort((a, b) => {
+  //         if (a.cost === b.cost) {
+  //           return a.name > b.name ? 1 : -1;
+  //         } else {
+  //           return a.cost > b.cost ? 1 : -1;
+  //         }
+  //       });
+  //       setDisplayArr(filteredArr);
+  //       break;
+  //     case "highToLow":
+  //       filteredArr = [...displayArr].sort((a, b) => {
+  //         if (a.cost === b.cost) {
+  //           return a.name > b.name ? 1 : -1;
+  //         } else {
+  //           return a.cost < b.cost ? 1 : -1;
+  //         }
+  //       });
+  //       setDisplayArr(filteredArr);
+  //       break;
+  //     case "skinLine":
+  //       filteredArr = [...displayArr].sort((a, b) =>
+  //         a.name > b.name ? 1 : -1
+  //       );
+  //       setDisplayArr(filteredArr);
+  //       break;
+  //   }
+  // };
 
   // useEffect(() => {
   //   if (filter === "vandals") {
@@ -349,44 +222,48 @@ const BrowseShop = ({ cart, setCart }) => {
   // }, [sortOption]);
   return (
     <div className="shop-area">
-      <div>
-        <label for="filter">Filter Items: </label>
-        <select
-          defaultValue={"all"}
-          onChange={filterItems}
-          name="filter"
-          id="filter"
+      <ul>
+        <li
+          onClick={() => {
+            filterItems("all");
+          }}
         >
-          <option value="all">Show All</option>
-          <option value="vandals">Vandals</option>
-          <option value="phantoms">Phantoms</option>
-          <option value="sheriffs">Sheriffs</option>
-          <option value="ghosts">Ghosts</option>
-        </select>
-      </div>
-      <div>
-        <label for="sort">Sort Items: </label>
-        <select
-          defaultValue={"default"}
-          onChange={sortItems}
-          name="sort"
-          id="sort"
+          All Items
+        </li>
+        <li
+          onClick={() => {
+            filterItems("vandals");
+          }}
         >
-          <option value="default">By Gun Type</option>
-          <option value="lowToHigh">Price: Low to High</option>
-          <option value="highToLow">Price: High to Low</option>
-          <option value="skinLine">By Skin Line</option>
-        </select>
-      </div>
+          Vandals
+        </li>
+        <li
+          onClick={() => {
+            filterItems("phantoms");
+          }}
+        >
+          Phantoms
+        </li>
+        <li
+          onClick={() => {
+            filterItems("ghosts");
+          }}
+        >
+          Ghosts
+        </li>
+        <li
+          onClick={() => {
+            filterItems("sheriffs");
+          }}
+        >
+          Sheriffs
+        </li>
+      </ul>
       <ItemGallery
-        vandals={vandalItemArray}
-        phantoms={phantomItemArray}
-        ghosts={ghostItemArray}
-        sheriffs={sheriffItemArray}
+        filterItems={filterItems}
         allItems={allItemArray}
         displayArr={displayArr}
         cart={cart}
-        setCart={setCart}
       />
     </div>
   );
