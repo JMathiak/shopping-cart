@@ -2,8 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 50px;
-    margin-right: 50px;
+    padding-left: 120px;
+    padding-right: 0px;
+    padding-bottom: 60px;
+    
 }
 
 .row{
