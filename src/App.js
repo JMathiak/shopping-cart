@@ -148,6 +148,7 @@ function App() {
       <Header cartSize={cart.length} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route
           path="/shop"
           element={<BrowseShop cart={cart} setCart={setCart} />}
