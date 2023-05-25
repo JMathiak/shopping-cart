@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import "../styles/ItemCard.css";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ItemCard = ({
   name,
   image,
   price,
   type,
-  products,
   itemNumber,
   cart,
   setCart,
   allItems,
 }) => {
   const [quant, setQuant] = useState(1);
-  const navigate = useNavigate();
   let quantMIN = 1;
   let quantMAX = 5;
   const addToCart = () => {

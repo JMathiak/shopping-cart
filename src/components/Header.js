@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +7,9 @@ function Header(props) {
   const navigate = useNavigate();
   return (
     <header className="header">
-      <h1 className="website-title">Shua's Valorant Gallery</h1>
+      <div className="website-title">
+        <h1>Shua's Valorant Gallery</h1>
+      </div>
       <nav>
         <ul className="link-holder">
           <li>
