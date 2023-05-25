@@ -1,15 +1,18 @@
 .header{
     border-bottom: 1px solid black;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     background-color: #ff4655;
 }
 
 .link-holder{
     display: flex;
-    margin-right: 50px;
+    margin-right: 250px;
+    margin-bottom: 28px;
     list-style: none;
     height: 100%;
+    align-items: center;
+    margin-top: 0;
 }
 
 .link{
@@ -18,4 +21,12 @@
     padding-left: 4px;
     height: 100%;
     text-decoration: none;
+}
+
+.website-title{
+    margin-left: 250px;
+}
+
+.cart-icon{
+    margin-right: 4px;
 }
