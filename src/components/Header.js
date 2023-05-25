@@ -1,34 +1,46 @@
 import React, { Component } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/Header.css";
 function Header(props) {
   const navigate = useNavigate();
   return (
     <nav className="header">
       <ul className="link-holder">
-        <li
-          className="link"
-          onClick={() => {
-            navigate("/");
-          }}
-        >
-          Home
+        <li>
+          <Link
+            className="link"
+            to="home"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/");
+            }}
+          >
+            Home
+          </Link>
         </li>
-        <li
-          className="link"
-          onClick={() => {
-            navigate("/shop");
-          }}
-        >
-          Browse Shop
+        <li>
+          <Link
+            className="link"
+            to="shop"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/shop");
+            }}
+          >
+            Browse Shop
+          </Link>
         </li>
-        <li
-          className="link"
-          onClick={() => {
-            navigate("/cart");
-          }}
-        >
-          View Cart
+        <li>
+          <Link
+            className="link"
+            to="cart"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/cart");
+            }}
+          >
+            View Cart
+          </Link>
         </li>
 
         <li>{props.cartSize}</li>
@@ -36,7 +48,6 @@ function Header(props) {
     </nav>
   );
 }
-
 
 /*
 Icons for home, browse, cart
