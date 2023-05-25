@@ -43,7 +43,7 @@ const ItemCard = ({
     <div className="item-card">
       <h2>{name}</h2>
       <img src={image} alt="Oni Vandal"></img>
-      <p>{type}</p>
+
       <p>{price} VP</p>
       <label htmlFor="quantity">Quantity: </label>
       <input
