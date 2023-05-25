@@ -2,12 +2,14 @@
 .item-card{
     width: 300px;
     padding: 10px;
-    border: 1px solid black;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 20px;
+    box-shadow: 10px 5px 5px #ff4655;
+    background-color: #f2eeeb;
 }
 
 .item-card > img{
