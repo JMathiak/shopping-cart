@@ -1,7 +1,7 @@
 .item-gallery{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
     padding-left: 120px;
     padding-right: 0px;
     padding-bottom: 60px;
