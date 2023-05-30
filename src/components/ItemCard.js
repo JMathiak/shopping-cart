@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/ItemCard.css";
-import { Link } from "react-router-dom";
+import { Lin, useNavigate } from "react-router-dom";
 
 const ItemCard = ({
   name,
@@ -13,6 +13,7 @@ const ItemCard = ({
   allItems,
 }) => {
   const [quant, setQuant] = useState(1);
+  const navigate = useNavigate();
   let quantMIN = 1;
   let quantMAX = 5;
   const addToCart = () => {
@@ -37,13 +38,19 @@ const ItemCard = ({
 
     setQuant(1);
   };
-  return (
-    <div className="item-card">
-      <h2>{name}</h2>
-      <img src={image} alt="Oni Vandal"></img>
 
-      <p>{price} VP</p>
-      <label htmlFor="quantity">Quantity: </label>
+  const cardClick = () => {
+    navigate(`/product/${itemNumber}`, {
+      state: { name: name, price: price, type: type, image: image },
+    });
+  };
+  return (
+    <div className="item-card" onClick={cardClick}>
+      <img src={image} alt="Oni Vandal"></img>
+      <h2 className="item-card-name">{name}</h2>
+
+      <p className="item-card-price">{price} VP</p>
+      {/* <label htmlFor="quantity">Quantity: </label>
       <input
         type="number"
         name="quantity"
@@ -54,8 +61,8 @@ const ItemCard = ({
         onChange={(e) => {
           setQuant(e.target.value);
         }}
-      ></input>
-      <div className="item-card-buttons">
+      ></input> */}
+      {/* <div className="item-card-buttons">
         <button onClick={addToCart}> Add to Cart</button>
         <Link
           className="item-card-link"
@@ -64,7 +71,7 @@ const ItemCard = ({
         >
           View Details
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
