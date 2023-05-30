@@ -222,7 +222,7 @@ const BrowseShop = ({ cart, setCart }) => {
   // }, [sortOption]);
   return (
     <div className="shop-area">
-      <ul>
+      <ul className="shop-filter-options">
         <li
           onClick={() => {
             filterItems("all");
