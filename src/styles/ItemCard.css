@@ -2,19 +2,23 @@
 .item-card{
     width: 300px;
     padding: 10px;
-    
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    margin: 20px;
-    box-shadow: 10px 5px 5px #ff4655;
+    margin: 30px;
     background-color: #f2eeeb;
+    /* border: 1px solid black; */
+}
+
+.item-card:hover{
+    box-shadow: 10px 5px 5px #ff4655;
+    cursor: pointer;
 }
 
 .item-card > img{
-    width: 50%;
-
+    width: 90%;
+    align-self: center;
 }
 
 .item-card-buttons{
