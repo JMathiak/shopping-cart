@@ -7,7 +7,8 @@
 .shop-filter-options{
     list-style: none;
     justify-self: center;
-    width: 25%;
+    width: 133px;
+    font-size: 20px;
 
 }
 
@@ -18,7 +19,19 @@
 
 .shop-filter-options > li:hover{
     border-bottom: 1px solid #ff4655;
+    color:white;
     background-color: #ff4655;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
+}
+
+.sort-header{
+    display: inline-block;
+    padding-left: 40px;
+    width: 175px;
+}
+
+.shop-sidebar{
+    width: 200px;
+    padding-left: 40px;
 }
