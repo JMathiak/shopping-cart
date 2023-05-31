@@ -1,9 +1,8 @@
 import "./App.css";
-import { Route, Routes, useParams, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import React, { useState } from "react";
 
-import Test from "./Test";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import BrowseShop from "./components/BrowseShop";
@@ -26,7 +25,6 @@ import mageGhost from "./images/mageGhost.jpg";
 import reaverGhost from "./images/reaverGhost.jpg";
 import ruinGhost from "./images/ruinGhost.jpg";
 function App() {
-  const [text, setText] = useState("DC");
   const [cart, setCart] = useState([]);
 
   const allItemArray = [
@@ -154,7 +152,10 @@ function App() {
           element={<BrowseShop cart={cart} setCart={setCart} />}
         />
         <Route path="/cart" element={<ShoppingCart cart={cart} />} />
-        <Route path="/product/:itemNumber" element={<ViewDetails />} />
+        <Route
+          path="/product/:itemNumber"
+          element={<ViewDetails cart={cart} setCart={setCart} />}
+        />
       </Routes>
     </div>
   );
