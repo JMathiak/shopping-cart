@@ -276,6 +276,7 @@ const BrowseShop = ({ cart, setCart }) => {
         allItems={allItemArray}
         displayArr={displayArr}
         cart={cart}
+        setCart={setCart}
       />
     </div>
   );
