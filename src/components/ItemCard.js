@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/ItemCard.css";
-import { Lin, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ItemCard = ({
   name,
@@ -41,7 +41,14 @@ const ItemCard = ({
 
   const cardClick = () => {
     navigate(`/product/${itemNumber}`, {
-      state: { name: name, price: price, type: type, image: image },
+      state: {
+        name: name,
+        price: price,
+        type: type,
+        image: image,
+        itemNumber: itemNumber,
+        allItems: allItems,
+      },
     });
   };
   return (
@@ -50,6 +57,7 @@ const ItemCard = ({
       <h2 className="item-card-name">{name}</h2>
 
       <p className="item-card-price">{price} VP</p>
+
       {/* <label htmlFor="quantity">Quantity: </label>
       <input
         type="number"
