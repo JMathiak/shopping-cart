@@ -1,0 +1,22 @@
+.item-details{
+    width: 100%;
+    height: calc(100% - 85.88px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.item-image{
+    margin-left: 60px;
+    
+}
+
+.item-descriptors{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.item-descriptors > p{
+    margin: 0;
+}

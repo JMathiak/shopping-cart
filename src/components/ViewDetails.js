@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import "../styles/ItemDetails.css";
 const ViewDetails = ({ cart, setCart }) => {
   const location = useLocation();
   console.log(location.state);
@@ -9,7 +10,7 @@ const ViewDetails = ({ cart, setCart }) => {
   const { image } = location.state;
   const { allItems } = location.state;
   const { itemNumber } = location.state;
-
+  const navigate = useNavigate();
   const addToCart = () => {
     if (cart.filter((x) => x.itemNumber === itemNumber).length > 0) {
       let workingArr = [...cart];
@@ -32,10 +33,21 @@ const ViewDetails = ({ cart, setCart }) => {
     // setQuant(1);
   };
   return (
-    <div>
-      {name}, {price} VP, {type}
-      <img src={image} alt="Gun"></img>
-      <button onClick={addToCart}>Add to Cart</button>
+    <div className="item-details">
+      <div className="item-descriptors">
+        <p>{name}</p>
+        <p>{price} VP</p>
+        <p>{type}</p>
+        <button onClick={addToCart}>Add to Cart</button>
+        <button
+          onClick={() => {
+            navigate(`/shop`);
+          }}
+        >
+          Return To Shop
+        </button>
+      </div>
+      <img className="item-image" src={image} alt="Gun"></img>
     </div>
   );
 };
