@@ -149,7 +149,13 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route
           path="/shop"
-          element={<BrowseShop cart={cart} setCart={setCart} />}
+          element={
+            <BrowseShop
+              cart={cart}
+              setCart={setCart}
+              allItemArray={allItemArray}
+            />
+          }
         />
         <Route path="/cart" element={<ShoppingCart cart={cart} />} />
         <Route
