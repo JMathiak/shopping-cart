@@ -53,7 +53,9 @@ const ItemCard = ({
   };
   return (
     <div className="item-card" onClick={cardClick}>
-      <img src={image} alt="Oni Vandal"></img>
+      <div className="item-card-image">
+        <img src={image} alt="Oni Vandal"></img>
+      </div>
       <h2 className="item-card-name">{name}</h2>
 
       <p className="item-card-price">{price} VP</p>
