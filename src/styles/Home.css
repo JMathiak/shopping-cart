@@ -1,4 +1,18 @@
 .home-container{
     display: flex;
     flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.featured-items{
+    border: 1px solid #ff4655;
+    display: flex;
+    width: 80%;
+}
+
+.featured-label{
+    
+    width: 80%;
 }

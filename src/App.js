@@ -145,8 +145,8 @@ function App() {
     <div className="container">
       <Header cartSize={cart.length} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home allItems={allItemArray} />} />
+        <Route path="/home" element={<Home allItems={allItemArray} />} />
         <Route
           path="/shop"
           element={
