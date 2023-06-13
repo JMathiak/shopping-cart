@@ -4,16 +4,20 @@ import "../styles/CartGallery.css";
 const ShoppingCart = ({ cart }) => {
   return (
     <div className="cart-gallery">
-      {cart.map((item) => (
-        <CartItemCard
-          name={item.name}
-          img={item.image}
-          cost={item.cost}
-          type={item.type}
-          quantity={item.quantity}
-          key={item.itemNumber}
-        />
-      ))}
+      {cart.length > 0 ? (
+        cart.map((item) => (
+          <CartItemCard
+            name={item.name}
+            img={item.image}
+            cost={item.cost}
+            type={item.type}
+            quantity={item.quantity}
+            key={item.itemNumber}
+          />
+        ))
+      ) : (
+        <div>No Items Currently in Cart</div>
+      )}
     </div>
   );
 };
