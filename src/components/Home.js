@@ -5,7 +5,8 @@ const Home = ({ allItems }) => {
   const [dealArray, setDealArray] = useState([]);
 
   const getDailyDeal = () => {
-    const shuffled = allItems.sort(() => 0.5 - Math.random());
+    const interArray = [...allItems];
+    const shuffled = interArray.sort(() => 0.5 - Math.random());
     let selected = shuffled.slice(0, 4);
     setDealArray(selected);
   };
