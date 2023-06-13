@@ -157,7 +157,10 @@ function App() {
             />
           }
         />
-        <Route path="/cart" element={<ShoppingCart cart={cart} />} />
+        <Route
+          path="/cart"
+          element={<ShoppingCart cart={cart} setCart={setCart} />}
+        />
         <Route
           path="/product/:itemNumber"
           element={<ViewDetails cart={cart} setCart={setCart} />}

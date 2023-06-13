@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CartItemCard from "./CartItemCard";
 import "../styles/CartGallery.css";
-const ShoppingCart = ({ cart }) => {
+const ShoppingCart = ({ cart, setCart }) => {
   return (
     <div className="cart-gallery">
       {cart.length > 0 ? (
@@ -13,6 +13,8 @@ const ShoppingCart = ({ cart }) => {
             type={item.type}
             quantity={item.quantity}
             key={item.itemNumber}
+            cart={cart}
+            setCart={setCart}
           />
         ))
       ) : (

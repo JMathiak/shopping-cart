@@ -1,17 +1,32 @@
 import React, { Component } from "react";
 import "../styles/CartItemCard.css";
-const CartItemCard = ({ name, img, cost, type, quantity }) => {
+const CartItemCard = ({
+  name,
+  img,
+  cost,
+  type,
+  quantity,
+  cart,
+  setCart,
+  key,
+}) => {
+  const removeItem = () => {
+    const holderCart = [...cart];
+    const index = holderCart.findIndex((item) => item.itemNumber === key);
+    holderCart.splice(index, 1);
+    setCart([...holderCart]);
+  };
   return (
     <div className="cart-item-card">
       <img src={img} alt={name}></img>
       <div className="item-info">
         <p>{name}</p>
-        <p>{type}</p>
-        <p>
-          {quantity} x {cost} VP
-        </p>
+        <p>1 x {cost} VP</p>
       </div>
-      <div className="item-cost">{quantity * cost} VP</div>
+      <div className="item-cost">{1 * cost} VP</div>
+      <div className="delete-item" onClick={removeItem}>
+        X
+      </div>
     </div>
   );
 };
