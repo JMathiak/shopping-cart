@@ -1,13 +1,14 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import Home from "./components/Home";
 import Header from "./components/Header";
 import BrowseShop from "./components/BrowseShop";
 import ShoppingCart from "./components/ShoppingCart";
 import ViewDetails from "./components/ViewDetails";
+import CartSideBar from "./components/CartSideBar";
 import oniVandal from "./images/OniVandal.jpg";
 import rgxVandal from "./images/RGXVandal.jpg";
 import gaiasVandal from "./images/GaiasVandal.jpg";
@@ -26,7 +27,17 @@ import reaverGhost from "./images/reaverGhost.jpg";
 import ruinGhost from "./images/ruinGhost.jpg";
 function App() {
   const [cart, setCart] = useState([]);
-
+  const [cartHovered, setCartHovered] = useState(false);
+  let menuRef = useRef();
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setCartHovered(false);
+        console.log(menuRef.current);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+  });
   const allItemArray = [
     {
       name: "Oni Vandal",
@@ -143,7 +154,11 @@ function App() {
   ];
   return (
     <div className="container">
-      <Header cartSize={cart.length} />
+      <Header
+        cartSize={cart.length}
+        cart={cart}
+        setCartHovered={setCartHovered}
+      />
       <Routes>
         <Route path="/" element={<Home allItems={allItemArray} />} />
         <Route path="/home" element={<Home allItems={allItemArray} />} />
@@ -166,6 +181,11 @@ function App() {
           element={<ViewDetails cart={cart} setCart={setCart} />}
         />
       </Routes>
+      {cartHovered && (
+        <div ref={menuRef} className="sidebar">
+          {cart.map((item) => item.name)}
+        </div>
+      )}
     </div>
   );
 }
