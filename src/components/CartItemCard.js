@@ -9,12 +9,16 @@ const CartItemCard = ({
   cart,
   setCart,
   key,
+  cartTotal,
+  setCartTotal,
 }) => {
   const removeItem = () => {
     const holderCart = [...cart];
     const index = holderCart.findIndex((item) => item.itemNumber === key);
     holderCart.splice(index, 1);
+    let newCartTotal = cartTotal - cost;
     setCart([...holderCart]);
+    setCartTotal(newCartTotal);
   };
   return (
     <div className="cart-item-card">

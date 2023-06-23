@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/ItemDetails.css";
-const ViewDetails = ({ cart, setCart }) => {
+const ViewDetails = ({ cart, setCart, cartTotal, setCartTotal }) => {
   const location = useLocation();
   console.log(location.state);
   const { name } = location.state;
@@ -27,6 +27,8 @@ const ViewDetails = ({ cart, setCart }) => {
         type: item.type,
         itemNumber: item.itemNumber,
       };
+      let newCartTotal = cartTotal + price;
+      setCartTotal(newCartTotal);
       setCart([...cart, arrItem]);
     }
 

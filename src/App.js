@@ -27,6 +27,7 @@ import reaverGhost from "./images/reaverGhost.jpg";
 import ruinGhost from "./images/ruinGhost.jpg";
 function App() {
   const [cart, setCart] = useState([]);
+  const [cartTotal, setCartTotal] = useState(0);
   const [cartHovered, setCartHovered] = useState(false);
   let menuRef = useRef();
   useEffect(() => {
@@ -174,11 +175,25 @@ function App() {
         />
         <Route
           path="/cart"
-          element={<ShoppingCart cart={cart} setCart={setCart} />}
+          element={
+            <ShoppingCart
+              cart={cart}
+              setCart={setCart}
+              cartTotal={cartTotal}
+              setCartTotal={setCartTotal}
+            />
+          }
         />
         <Route
           path="/product/:itemNumber"
-          element={<ViewDetails cart={cart} setCart={setCart} />}
+          element={
+            <ViewDetails
+              cart={cart}
+              setCart={setCart}
+              cartTotal={cartTotal}
+              setCartTotal={setCartTotal}
+            />
+          }
         />
       </Routes>
       {cartHovered && (
