@@ -1,7 +1,13 @@
+@font-face {
+    font-family: 'Valo';
+    src: url('./fonts/Valorant\ Font.ttf');
+}
+
 .header{
     display: flex;
     justify-content: space-between;
     color: #ff4655;
+    font-family: Valo;
     
 }
 

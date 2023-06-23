@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'Valo';
+    src: url('./fonts/Valorant\ Font.ttf');
+}
 .item-card{
     width: 300px;
     padding: 10px;
@@ -13,6 +16,7 @@
 
 .item-card-name{
     padding-top: 10px;
+    font-family: Valo;
 }
 
 .item-card-price{
