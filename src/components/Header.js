@@ -42,7 +42,7 @@ function Header(props) {
               Shop
             </Link>
           </li>
-          <li onMouseOver={hovered}>
+          <li>
             <Link
               className="link"
               to="cart"
