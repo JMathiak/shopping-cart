@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import "../styles/ItemDetails.css";
 const ViewDetails = ({ cart, setCart, cartTotal, setCartTotal }) => {
   const location = useLocation();
@@ -36,12 +38,20 @@ const ViewDetails = ({ cart, setCart, cartTotal, setCartTotal }) => {
   };
   return (
     <div className="item-details">
-      <div className="item-descriptors">
-        <p>{name}</p>
-        <p>{price} VP</p>
-        <p>{type}</p>
-        <button onClick={addToCart}>Add to Cart</button>
+      <div className="item-image-descriptors">
+        <img className="item-image" src={image} alt={name}></img>
+        <div className="item-descriptors">
+          <p className="item-name">{name}</p>
+          <p>{price} VP</p>
+        </div>
+      </div>
+
+      <div className="detail-buttons">
+        <button className="cart-button" onClick={addToCart}>
+          Add To Cart
+        </button>
         <button
+          className="return-button"
           onClick={() => {
             navigate(`/shop`);
           }}
@@ -49,7 +59,6 @@ const ViewDetails = ({ cart, setCart, cartTotal, setCartTotal }) => {
           Return To Shop
         </button>
       </div>
-      <img className="item-image" src={image} alt="Gun"></img>
     </div>
   );
 };
