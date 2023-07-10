@@ -9,7 +9,7 @@ import BrowseShop from "./components/BrowseShop";
 import ShoppingCart from "./components/ShoppingCart";
 import ViewDetails from "./components/ViewDetails";
 import CartSideBar from "./components/CartSideBar";
-import oniVandal from "./images/OniVandal.jpg";
+import preludeVandal from "./images/PreludetoChaosVandal.jpg";
 import rgxVandal from "./images/RGXVandal.jpg";
 import gaiasVandal from "./images/GaiasVandal.jpg";
 import araxysVandal from "./images/AraxysVandal.jpg";
@@ -41,9 +41,9 @@ function App() {
   });
   const allItemArray = [
     {
-      name: "Oni Vandal",
-      image: oniVandal,
-      cost: 1775,
+      name: "Prelude To Chaos Vandal",
+      image: preludeVandal,
+      cost: 2175,
       type: "Vandal",
       itemNumber: 1,
     },
