@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Roboto-Mono';
+    src: url('./Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
 .cart-item-card{
     width: 800px;
     height: 100px;
@@ -5,11 +10,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
+    font-family: Roboto-Mono;
 }
 
 .cart-item-card > img{
-    width: 20%;
+    width: 25%;
     margin-right: 10px;
     margin-left: 10px;
 
@@ -17,6 +23,7 @@
 
 .item-info{
     margin-right: 20px;
+    font-family: Roboto-Mono;
 }
 
 .item-cost{
@@ -27,4 +34,13 @@
 .item-info > p{
 
     margin: 0;
+}
+
+.delete-item{
+    padding-right: 12px;
+    cursor: pointer;
+}
+
+.delete-item:hover{
+    color: #ff4655;
 }
