@@ -1,7 +1,47 @@
+@font-face {
+    font-family: 'Roboto-Mono';
+    src: url('./Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
 .cart-gallery{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: calc(100% - 85.88px);
+}
+
+.empty-cart{
+    font-size: 36px;   
+}
+
+.cost-check-out{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto-Mono;
+}
+
+.cart-buttons{
+    display:flex;
+    /* flex-direction: column; */
+}
+
+.check-out-button, .empty-cart-button{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    padding: 10px;
+    color: white;
+    border: none;
+    margin-right: 15px;
+    cursor: pointer;
+    font-family: Roboto-Mono;
+}
+
+.check-out-button:hover, .empty-cart-button:hover{
+    background-color: #ff4655;
 }

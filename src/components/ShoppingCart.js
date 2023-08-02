@@ -25,13 +25,17 @@ const ShoppingCart = ({ cart, setCart, cartTotal, setCartTotal }) => {
           />
         ))
       ) : (
-        <div>No Items Currently in Cart</div>
+        <div className="empty-cart">No Items Currently in Cart</div>
       )}
       {cart.length > 0 && (
-        <div>
-          Total Cost: {cartTotal}VP{" "}
-          <button onClick={emptyCart}>Empty Cart</button>{" "}
-          <button>Check Out</button>
+        <div className="cost-check-out">
+          <p>Total Cost: {cartTotal}VP</p>
+          <div className="cart-buttons">
+            <button className="check-out-button">Check Out</button>
+            <button className="empty-cart-button" onClick={emptyCart}>
+              Empty Cart
+            </button>
+          </div>
         </div>
       )}
     </div>
