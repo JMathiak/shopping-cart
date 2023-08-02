@@ -2,6 +2,12 @@
     font-family: 'Valo';
     src: url('./fonts/Valorant\ Font.ttf');
 }
+
+@font-face {
+    font-family: 'Roboto-Mono';
+    src: url('./Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
 .item-details{
     width: 100%;
     height: calc(100% - 85.88px);
@@ -26,9 +32,14 @@
 .item-name{
     font-family: Valo;
 }
+
+.item-cost{
+    font-family: Roboto-Mono;
+}
 .item-descriptors{
     font-size: xx-large;
     font-weight: bold;
+    margin-top: 4px;
 }
 
 .item-descriptors > p{
@@ -44,6 +55,7 @@
     color: white;
     border: none;
     font-size: large;
+    font-family: Roboto-Mono;
 }
 
 .cart-button{

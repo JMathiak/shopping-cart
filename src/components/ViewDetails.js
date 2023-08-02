@@ -42,7 +42,7 @@ const ViewDetails = ({ cart, setCart, cartTotal, setCartTotal }) => {
         <img className="item-image" src={image} alt={name}></img>
         <div className="item-descriptors">
           <p className="item-name">{name}</p>
-          <p>{price} VP</p>
+          <p className="item-cost">{price} VP</p>
         </div>
       </div>
 
