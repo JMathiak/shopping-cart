@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../styles/CartItemCard.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 const CartItemCard = ({
   name,
   img,
@@ -29,7 +31,7 @@ const CartItemCard = ({
       </div>
       <div className="item-cost">{1 * cost} VP</div>
       <div className="delete-item" onClick={removeItem}>
-        X
+        <FontAwesomeIcon icon={faX} />
       </div>
     </div>
   );
