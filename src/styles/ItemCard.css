@@ -2,6 +2,12 @@
     font-family: 'Valo';
     src: url('./fonts/Valorant\ Font.ttf');
 }
+
+@font-face {
+    font-family: 'Roboto-Mono';
+    src: url('./Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
 .item-card{
     width: 300px;
     padding: 10px;
@@ -22,6 +28,7 @@
 .item-card-price{
     padding-top: 10px;
     justify-self: flex-end;
+    font-family: Roboto-Mono;
 }
 .item-card:hover{
     box-shadow: 10px 5px 5px #ff4655;

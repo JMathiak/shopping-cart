@@ -1,3 +1,9 @@
+
+@font-face {
+    font-family: 'Roboto-Mono';
+    src: url('./Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
 .shop-area{
    
     display: flex;
@@ -7,8 +13,9 @@
 .shop-filter-options{
     list-style: none;
     justify-self: center;
-    width: 133px;
+    width: 140px;
     font-size: 20px;
+    font-family: Roboto-Mono;
 
 }
 
@@ -21,7 +28,7 @@
     border-bottom: 1px solid #ff4655;
     color:white;
     background-color: #ff4655;
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
 }
 
@@ -29,6 +36,7 @@
     display: inline-block;
     padding-left: 40px;
     width: 175px;
+    font-family: Roboto-Mono;
 }
 
 .shop-sidebar{
