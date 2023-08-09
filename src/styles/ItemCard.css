@@ -17,6 +17,7 @@
     flex-direction: column;
     margin: 30px;
     background-color: #f2eeeb;
+    transition: box-shadow .3s, color .3s;
     /* border: 1px solid black; */
 }
 
