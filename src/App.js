@@ -1,14 +1,13 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 
 import Home from "./components/Home";
 import Header from "./components/Header";
 import BrowseShop from "./components/BrowseShop";
 import ShoppingCart from "./components/ShoppingCart";
 import ViewDetails from "./components/ViewDetails";
-import CartSideBar from "./components/CartSideBar";
 import preludeVandal from "./images/PreludetoChaosVandal.jpg";
 import rgxVandal from "./images/RGXVandal.jpg";
 import gaiasVandal from "./images/GaiasVandal.jpg";
@@ -28,17 +27,7 @@ import ruinGhost from "./images/ruinGhost.jpg";
 function App() {
   const [cart, setCart] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
-  const [cartHovered, setCartHovered] = useState(false);
-  let menuRef = useRef();
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) {
-        setCartHovered(false);
-        console.log(menuRef.current);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-  });
+
   const allItemArray = [
     {
       name: "Prelude To Chaos Vandal",
@@ -155,11 +144,7 @@ function App() {
   ];
   return (
     <div className="container">
-      <Header
-        cartSize={cart.length}
-        cart={cart}
-        setCartHovered={setCartHovered}
-      />
+      <Header cartSize={cart.length} cart={cart} />
       <Routes>
         <Route path="/" element={<Home allItems={allItemArray} />} />
         <Route path="/home" element={<Home allItems={allItemArray} />} />
