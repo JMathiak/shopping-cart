@@ -14,8 +14,6 @@ const ItemCard = ({
 }) => {
   const [quant, setQuant] = useState(1);
   const navigate = useNavigate();
-  let quantMIN = 1;
-  let quantMAX = 5;
   const addToCart = () => {
     if (cart.filter((x) => x.itemNumber === itemNumber).length > 0) {
       let workingArr = [...cart];
