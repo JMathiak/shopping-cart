@@ -196,11 +196,11 @@ function App() {
           }
         />
       </Routes>
-      {cartHovered && (
+      {/* {cartHovered && (
         <div ref={menuRef} className="sidebar">
           {cart.map((item) => item.name)}
         </div>
-      )}
+      )} */}
     </div>
   );
 }
