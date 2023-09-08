@@ -57,31 +57,7 @@ const ItemCard = ({
         <img src={image} alt="Oni Vandal"></img>
       </div>
       <h2 className="item-card-name">{name}</h2>
-
       <p className="item-card-price">{price} VP</p>
-
-      {/* <label htmlFor="quantity">Quantity: </label>
-      <input
-        type="number"
-        name="quantity"
-        id="quantity"
-        min={quantMIN}
-        max={quantMAX}
-        value={quant}
-        onChange={(e) => {
-          setQuant(e.target.value);
-        }}
-      ></input> */}
-      {/* <div className="item-card-buttons">
-        <button onClick={addToCart}> Add to Cart</button>
-        <Link
-          className="item-card-link"
-          to={`/product/${itemNumber}`}
-          state={{ name: name, price: price, type: type, image: image }}
-        >
-          View Details
-        </Link>
-      </div> */}
     </section>
   );
 };
