@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Home.css";
 import ItemCard from "./ItemCard";
+import featuredImage from "../images/featured-skins.jpg";
 const Home = ({ allItems }) => {
   const [dealArray, setDealArray] = useState([]);
 
@@ -16,9 +17,12 @@ const Home = ({ allItems }) => {
   }, []);
 
   return (
-    <div className="home-container">
+    <main className="home-container">
+      <div className="featured-image">
+        <img className="featImage" src={featuredImage} alt="" />
+      </div>
       <h2 className="featured-label">Featured Items</h2>
-      <div className="featured-items">
+      <section className="featured-items">
         {dealArray.map((item) => (
           <ItemCard
             name={item.name}
@@ -30,8 +34,8 @@ const Home = ({ allItems }) => {
             key={item.itemNumber}
           />
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 
