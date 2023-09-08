@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CartItemCard from "./CartItemCard";
 import "../styles/CartGallery.css";
 const ShoppingCart = ({ cart, setCart, cartTotal, setCartTotal }) => {

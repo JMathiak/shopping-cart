@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/ItemCard.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ItemCard = ({
   name,
@@ -12,30 +12,30 @@ const ItemCard = ({
   setCart,
   allItems,
 }) => {
-  const [quant, setQuant] = useState(1);
+  // const [quant, setQuant] = useState(1);
   const navigate = useNavigate();
-  const addToCart = () => {
-    if (cart.filter((x) => x.itemNumber === itemNumber).length > 0) {
-      let workingArr = [...cart];
-      let index = workingArr.findIndex((e) => e.itemNumber === itemNumber);
-      let itemQuant = parseInt(workingArr[index].quantity) + parseInt(quant);
-      workingArr[index].quantity = itemQuant;
-      setCart(workingArr);
-    } else {
-      let item = allItems.find((x) => x.itemNumber === itemNumber);
-      let arrItem = {
-        name: item.name,
-        image: item.image,
-        cost: item.cost,
-        type: item.type,
-        itemNumber: item.itemNumber,
-        quantity: quant,
-      };
-      setCart([...cart, arrItem]);
-    }
+  // const addToCart = () => {
+  //   if (cart.filter((x) => x.itemNumber === itemNumber).length > 0) {
+  //     let workingArr = [...cart];
+  //     let index = workingArr.findIndex((e) => e.itemNumber === itemNumber);
+  //     let itemQuant = parseInt(workingArr[index].quantity) + parseInt(quant);
+  //     workingArr[index].quantity = itemQuant;
+  //     setCart(workingArr);
+  //   } else {
+  //     let item = allItems.find((x) => x.itemNumber === itemNumber);
+  //     let arrItem = {
+  //       name: item.name,
+  //       image: item.image,
+  //       cost: item.cost,
+  //       type: item.type,
+  //       itemNumber: item.itemNumber,
+  //       quantity: quant,
+  //     };
+  //     setCart([...cart, arrItem]);
+  //   }
 
-    setQuant(1);
-  };
+  //   setQuant(1);
+  // };
 
   const cardClick = () => {
     navigate(`/product/${itemNumber}`, {
