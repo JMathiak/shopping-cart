@@ -10,6 +10,7 @@
 
 .item-card{
     width: 300px;
+    height: 305px;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -45,7 +46,7 @@
 
 .item-card-image{
     width: 90%;
-    height: 40%;
+    height: 100px;
     padding-top: 20px;
 }
 
