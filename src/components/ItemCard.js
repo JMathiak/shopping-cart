@@ -52,7 +52,7 @@ const ItemCard = ({
     });
   };
   return (
-    <div className="item-card" onClick={cardClick}>
+    <section className="item-card" onClick={cardClick}>
       <div className="item-card-image">
         <img src={image} alt="Oni Vandal"></img>
       </div>
@@ -82,7 +82,7 @@ const ItemCard = ({
           View Details
         </Link>
       </div> */}
-    </div>
+    </section>
   );
 };
 

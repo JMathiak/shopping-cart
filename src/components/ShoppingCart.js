@@ -8,7 +8,7 @@ const ShoppingCart = ({ cart, setCart, cartTotal, setCartTotal }) => {
     setCartTotal(0);
   };
   return (
-    <div className="cart-gallery">
+    <main className="cart-gallery">
       {cart.length > 0 ? (
         cart.map((item) => (
           <CartItemCard
@@ -38,7 +38,7 @@ const ShoppingCart = ({ cart, setCart, cartTotal, setCartTotal }) => {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 };
 

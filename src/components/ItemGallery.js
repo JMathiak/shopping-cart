@@ -3,23 +3,21 @@ import ItemCard from "./ItemCard";
 import "../styles/ItemGallery.css";
 const ItemGallery = ({ cart, setCart, allItems, displayArr }) => {
   return (
-    <div>
-      <div className="item-gallery">
-        {displayArr.map((item) => (
-          <ItemCard
-            name={item.name}
-            image={item.image}
-            price={item.cost}
-            type={item.type}
-            itemNumber={item.itemNumber}
-            cart={cart}
-            setCart={setCart}
-            allItems={allItems}
-            key={item.itemNumber}
-          />
-        ))}
-      </div>
-    </div>
+    <section className="item-gallery">
+      {displayArr.map((item) => (
+        <ItemCard
+          name={item.name}
+          image={item.image}
+          price={item.cost}
+          type={item.type}
+          itemNumber={item.itemNumber}
+          cart={cart}
+          setCart={setCart}
+          allItems={allItems}
+          key={item.itemNumber}
+        />
+      ))}
+    </section>
   );
 };
 

@@ -40,8 +40,8 @@ const BrowseShop = ({ cart, setCart, allItemArray }) => {
   };
 
   return (
-    <div className="shop-area">
-      <div className="shop-sidebar">
+    <main className="shop-area">
+      <aside className="shop-sidebar">
         <h2 className="sort-header">
           Shop / <br /> {sorting}
         </h2>
@@ -82,7 +82,7 @@ const BrowseShop = ({ cart, setCart, allItemArray }) => {
             Sheriffs
           </li>
         </ul>
-      </div>
+      </aside>
       <ItemGallery
         filterItems={filterItems}
         allItems={allItemArray}
@@ -90,7 +90,7 @@ const BrowseShop = ({ cart, setCart, allItemArray }) => {
         cart={cart}
         setCart={setCart}
       />
-    </div>
+    </main>
   );
 };
 

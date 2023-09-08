@@ -14,7 +14,7 @@ function Header(props) {
   return (
     <header className="header">
       <div className="website-title">
-        <h1>Shua's Valorant Gallery</h1>
+        <h1>Shua's Valorant Store</h1>
       </div>
       <nav>
         <ul className="link-holder">
