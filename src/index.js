@@ -7,7 +7,7 @@ import RouteSwitch from "./RouteSwitch";
 import { HashRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <HashRouter basename="/">
+  <HashRouter basename={process.env.PUBLIC_URL}>
     <App />
   </HashRouter>
 );
