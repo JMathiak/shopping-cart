@@ -145,7 +145,7 @@ function App() {
   return (
     <div className="container">
       <Header cartSize={cart.length} cart={cart} />
-      <HashRouter basename="/">
+      <Routes basename="/">
         <Route path="/" element={<Home allItems={allItemArray} />} />
         <Route path="/home" element={<Home allItems={allItemArray} />} />
         <Route
@@ -180,7 +180,7 @@ function App() {
             />
           }
         />
-      </HashRouter>
+      </Routes>
       <footer className="footer">
         {" "}
         All images belong to their respective owners, All Code is Original and
