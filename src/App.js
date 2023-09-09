@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 
 import React, { useState } from "react";
 
@@ -145,47 +145,49 @@ function App() {
   return (
     <div className="container">
       <Header cartSize={cart.length} cart={cart} />
-      <Routes>
-        <Route path="/" element={<Home allItems={allItemArray} />} />
-        <Route path="/home" element={<Home allItems={allItemArray} />} />
-        <Route
-          path="/shop"
-          element={
-            <BrowseShop
-              cart={cart}
-              setCart={setCart}
-              allItemArray={allItemArray}
-            />
-          }
-        />
-        <Route
-          path="/cart"
-          element={
-            <ShoppingCart
-              cart={cart}
-              setCart={setCart}
-              cartTotal={cartTotal}
-              setCartTotal={setCartTotal}
-            />
-          }
-        />
-        <Route
-          path="/product/:itemNumber"
-          element={
-            <ViewDetails
-              cart={cart}
-              setCart={setCart}
-              cartTotal={cartTotal}
-              setCartTotal={setCartTotal}
-            />
-          }
-        />
-      </Routes>
-      {/* {cartHovered && (
-        <div ref={menuRef} className="sidebar">
-          {cart.map((item) => item.name)}
-        </div>
-      )} */}
+      <HashRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Home allItems={allItemArray} />} />
+          <Route path="/home" element={<Home allItems={allItemArray} />} />
+          <Route
+            path="/shop"
+            element={
+              <BrowseShop
+                cart={cart}
+                setCart={setCart}
+                allItemArray={allItemArray}
+              />
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <ShoppingCart
+                cart={cart}
+                setCart={setCart}
+                cartTotal={cartTotal}
+                setCartTotal={setCartTotal}
+              />
+            }
+          />
+          <Route
+            path="/product/:itemNumber"
+            element={
+              <ViewDetails
+                cart={cart}
+                setCart={setCart}
+                cartTotal={cartTotal}
+                setCartTotal={setCartTotal}
+              />
+            }
+          />
+        </Routes>
+      </HashRouter>
+      <footer className="footer">
+        {" "}
+        All images belong to their respective owners, All Code is Original and
+        Written by Josh Mathiak
+      </footer>
     </div>
   );
 }
