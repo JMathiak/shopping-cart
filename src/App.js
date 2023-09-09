@@ -145,44 +145,42 @@ function App() {
   return (
     <div className="container">
       <Header cartSize={cart.length} cart={cart} />
-      <HashRouter basename="/">
-        <Routes>
-          <Route path="/" element={<Home allItems={allItemArray} />} />
-          <Route path="/home" element={<Home allItems={allItemArray} />} />
-          <Route
-            path="/shop"
-            element={
-              <BrowseShop
-                cart={cart}
-                setCart={setCart}
-                allItemArray={allItemArray}
-              />
-            }
-          />
-          <Route
-            path="/cart"
-            element={
-              <ShoppingCart
-                cart={cart}
-                setCart={setCart}
-                cartTotal={cartTotal}
-                setCartTotal={setCartTotal}
-              />
-            }
-          />
-          <Route
-            path="/product/:itemNumber"
-            element={
-              <ViewDetails
-                cart={cart}
-                setCart={setCart}
-                cartTotal={cartTotal}
-                setCartTotal={setCartTotal}
-              />
-            }
-          />
-        </Routes>
-      </HashRouter>
+      <Routes>
+        <Route path="/" element={<Home allItems={allItemArray} />} />
+        <Route path="/home" element={<Home allItems={allItemArray} />} />
+        <Route
+          path="/shop"
+          element={
+            <BrowseShop
+              cart={cart}
+              setCart={setCart}
+              allItemArray={allItemArray}
+            />
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <ShoppingCart
+              cart={cart}
+              setCart={setCart}
+              cartTotal={cartTotal}
+              setCartTotal={setCartTotal}
+            />
+          }
+        />
+        <Route
+          path="/product/:itemNumber"
+          element={
+            <ViewDetails
+              cart={cart}
+              setCart={setCart}
+              cartTotal={cartTotal}
+              setCartTotal={setCartTotal}
+            />
+          }
+        />
+      </Routes>
       <footer className="footer">
         {" "}
         All images belong to their respective owners, All Code is Original and
