@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.320c2a3f.css",
+    "main.js": "/shopping-cart/static/js/main.db39e4d8.js",
+    "static/js/787.d6fe38e8.chunk.js": "/shopping-cart/static/js/787.d6fe38e8.chunk.js",
+    "static/media/featured-skins.jpg": "/shopping-cart/static/media/featured-skins.2310361c1a2381118b8b.jpg",
+    "static/media/RobotoMono-Regular.ttf": "/shopping-cart/static/media/RobotoMono-Regular.34e46962590bff8eefe5.ttf",
+    "static/media/reaverSheriff.jpg": "/shopping-cart/static/media/reaverSheriff.8c772036d4799866bbc7.jpg",
+    "static/media/Valorant Font.ttf": "/shopping-cart/static/media/Valorant Font.86ec8370af32018a2391.ttf",
+    "static/media/solSheriff.jpg": "/shopping-cart/static/media/solSheriff.5b94d89f4f6f74ca8cf8.jpg",
+    "static/media/chronoSheriff.jpg": "/shopping-cart/static/media/chronoSheriff.cd3c1473d079a3339309.jpg",
+    "static/media/GaiasVandal.jpg": "/shopping-cart/static/media/GaiasVandal.bdf6e47219f274f8e949.jpg",
+    "static/media/mageGhost.jpg": "/shopping-cart/static/media/mageGhost.e137d5c5a083b6a2271e.jpg",
+    "static/media/gaiasGhost.jpg": "/shopping-cart/static/media/gaiasGhost.0c7bcadd0322e982920c.jpg",
+    "static/media/oniPhantom.jpg": "/shopping-cart/static/media/oniPhantom.3747d910cf3a4476722b.jpg",
+    "static/media/ruinGhost.jpg": "/shopping-cart/static/media/ruinGhost.4ef8605d1b95930bff8b.jpg",
+    "static/media/chronoPhantom.jpg": "/shopping-cart/static/media/chronoPhantom.a01257921ab51cf9ae16.jpg",
+    "static/media/singularitySheriff.jpg": "/shopping-cart/static/media/singularitySheriff.9bbffbe2a2ee13afb0ef.jpg",
+    "static/media/RGXVandal.jpg": "/shopping-cart/static/media/RGXVandal.5c029d1f3d3ab74c7f70.jpg",
+    "static/media/PreludetoChaosVandal.jpg": "/shopping-cart/static/media/PreludetoChaosVandal.210c8f8554ce96795494.jpg",
+    "static/media/reconPhantom.jpg": "/shopping-cart/static/media/reconPhantom.4125c07ccb73b61800e7.jpg",
+    "static/media/reaverGhost.jpg": "/shopping-cart/static/media/reaverGhost.c4cda91e8cb900dc171c.jpg",
+    "static/media/AraxysVandal.jpg": "/shopping-cart/static/media/AraxysVandal.83995570df36d5853db9.jpg",
+    "static/media/spectrumPhantom.jpg": "/shopping-cart/static/media/spectrumPhantom.9415a176061a1bdfe16b.jpg",
+    "index.html": "/shopping-cart/index.html",
+    "main.320c2a3f.css.map": "/shopping-cart/static/css/main.320c2a3f.css.map",
+    "main.db39e4d8.js.map": "/shopping-cart/static/js/main.db39e4d8.js.map",
+    "787.d6fe38e8.chunk.js.map": "/shopping-cart/static/js/787.d6fe38e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.320c2a3f.css",
+    "static/js/main.db39e4d8.js"
+  ]
+}
